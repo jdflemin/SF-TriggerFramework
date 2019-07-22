@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TriggerOn__c</fullName>
+    <defaultValue>true</defaultValue>
+    <description>Default is checked as we want triggers to be on by default.</description>
+    <externalId>false</externalId>
+    <label>Trigger On</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

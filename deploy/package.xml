@@ -7,6 +7,19 @@
     <members>TriggerDispatcher</members>
   </types>
   <types>
+    <name>CustomField</name>
+    <members>TriggerSwitch__c.ObjectAPIName__c</members>
+    <members>TriggerSwitch__c.TriggerOn__c</members>
+  </types>
+  <types>
+    <name>ListView</name>
+    <members>TriggerSwitch__c.StandardView</members>
+  </types>
+  <types>
+    <name>CustomObject</name>
+    <members>TriggerSwitch__c</members>
+  </types>
+  <types>
     <name>ApexTrigger</name>
     <members>LeadTrigger</members>
   </types>
