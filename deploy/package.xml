@@ -9,7 +9,7 @@
   <types>
     <name>CustomField</name>
     <members>TriggerSwitch__c.ObjectAPIName__c</members>
-    <members>TriggerSwitch__c.TriggerOn__c</members>
+    <members>TriggerSwitch__c.TriggerOff__c</members>
   </types>
   <types>
     <name>ListView</name>

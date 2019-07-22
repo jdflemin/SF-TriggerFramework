@@ -28,3 +28,5 @@ ehthumbs.db
 $RECYCLE.BIN/
 
 .vscode
+.\force-app\main\default\profiles
+.\deploy\profiles

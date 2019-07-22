@@ -11,13 +11,23 @@ public abstract class AbstractTrigger {
 	public Schema.SObjectType sObjectType {
 		get { return trigger.new.isEmpty() ? trigger.old[0].getSObjectType() : trigger.new[0].getSObjectType(); } 
 	}
+
+	protected Boolean triggerOff {
+		get{ return triggerOff != null ? triggerOff : false; }
+		set;
+	}
 	
 	public AbstractTrigger(System.TriggerOperation triggerOperation) {
 		this.setContextVariables(triggerOperation);	
-		castingMethod();
 	}
 
-	public abstract void castingMethod();
+	public AbstractTrigger ableToRun() {
+		// check for logic if trigger is on or off
+		system.debug('ableToRun');
+		return this;
+	}
+
+	public abstract AbstractTrigger castingMethod();
 
 	public virtual void beforeInsert() {
 		return;
@@ -41,7 +51,7 @@ public abstract class AbstractTrigger {
 	public virtual void afterUndelete() {
 		return;
 	}
-	
+
 	private void setContextVariables(System.TriggerOperation triggerOperation){
 		switch on triggerOperation {
 			when BEFORE_INSERT {

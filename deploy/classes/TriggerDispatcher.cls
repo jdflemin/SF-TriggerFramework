@@ -6,7 +6,7 @@ public with sharing class TriggerDispatcher {
 	public static void run(AbstractTrigger handler, System.TriggerOperation triggerOperation) {
 		switch on triggerOperation {
 			when BEFORE_INSERT {
-				handler.beforeInsert();
+				handler.ableToRun().castingMethod().beforeInsert();
 			}
 			when BEFORE_UPDATE {
 				handler.beforeUpdate();

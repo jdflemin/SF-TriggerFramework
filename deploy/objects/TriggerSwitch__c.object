@@ -7,7 +7,6 @@
     <visibility>Public</visibility>
     <fields>
         <fullName>ObjectAPIName__c</fullName>
-        <caseSensitive>true</caseSensitive>
         <description>Object for which a specific switch is used for</description>
         <externalId>false</externalId>
         <label>Object API Name</label>
@@ -15,14 +14,14 @@
         <required>true</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>
-        <unique>true</unique>
+        <unique>false</unique>
     </fields>
     <fields>
-        <fullName>TriggerOn__c</fullName>
-        <defaultValue>true</defaultValue>
-        <description>Default is checked as we want triggers to be on by default.</description>
+        <fullName>TriggerOff__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Default is unchecked as triggers are on by default.</description>
         <externalId>false</externalId>
-        <label>Trigger On</label>
+        <label>Trigger Off</label>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
     </fields>
