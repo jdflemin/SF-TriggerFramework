@@ -3,7 +3,7 @@
     <types>
         <members>LeadTriggerHandler</members>
         <members>TriggerDispatcher</members>
-        <members>VirtualTrigger</members>
+        <members>AbstractTrigger</members>
         <name>ApexClass</name>
     </types>
     <types>
