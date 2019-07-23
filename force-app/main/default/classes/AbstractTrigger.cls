@@ -15,7 +15,10 @@ public abstract class AbstractTrigger {
 	}
 
 	private String sObjectType {
-		get { return trigger.new.isEmpty() ? String.valueOf(trigger.old[0].getSObjectType()) : String.valueOf(trigger.new[0].getSObjectType()); } 
+		get { return trigger.new.isEmpty() ? 
+									String.valueOf(trigger.old[0].getSObjectType()) : 
+									String.valueOf(trigger.new[0].getSObjectType()); 
+		} 
 	}
 
 	private Boolean customSettingsTriggerSwitchOff {
@@ -30,7 +33,7 @@ public abstract class AbstractTrigger {
 						WHERE ObjectAPIName__c = :sObjectType 
 						LIMIT 1
 					];
-				}
+		}
 	}
 	
 	public AbstractTrigger(System.TriggerOperation triggerOperation) {
@@ -38,26 +41,26 @@ public abstract class AbstractTrigger {
 	}
 
 	public AbstractTrigger isTriggerOnOrOff() {
-		Map<String, TriggerSwitch__c> customSettingsMap = new Map<String, TriggerSwitch__c>{
+		Map<String, TriggerSwitch__c> customSettingsMap = new Map<String, TriggerSwitch__c> {
 			UserInfo.getUserId() => TriggerSwitch__c.getValues(UserInfo.getUserId()),
 			UserInfo.getProfileId() => TriggerSwitch__c.getValues(UserInfo.getProfileId()),
 			'Org' => TriggerSwitch__c.getOrgDefaults()
 		};
 
-		for(String s : customSettingsMap.keySet()) {
-			if(customSettingsMap.get(s) != null) {
+		for (String s : customSettingsMap.keySet()) {
+			if (customSettingsMap.get(s) != null) {
 				customSettingsTriggerSwitchOff = customSettingsMap.get(s).TriggerOff__c;
 				break;
 			}
 		}
 
-		if(triggerControlMetadata.OverrideCustomSettings__c) bypassTrigger = triggerControlMetadata.TriggerOff__c;
+		if (triggerControlMetadata.OverrideCustomSettings__c) bypassTrigger = triggerControlMetadata.TriggerOff__c;
 		else bypassTrigger = customSettingsTriggerSwitchOff;
 
 		return this;
 	}
 
-		private void setContextVariables(System.TriggerOperation triggerOperation){
+		private void setContextVariables(System.TriggerOperation triggerOperation) {
 		switch on triggerOperation {
 			when BEFORE_INSERT {
 				this.triggerNew = Trigger.new;
@@ -83,28 +86,11 @@ public abstract class AbstractTrigger {
 	}
 
 	public abstract AbstractTrigger castingMethod();
-
-	public virtual void beforeInsert() {
-		return;
-	}
-	public virtual void beforeUpdate() {
-		return;
-	}
-	public virtual void beforeDelete() {
-		return;
-	}
-	
-	public virtual void afterInsert() {
-		return;
-	}
-	public virtual void afterUpdate() {
-		return;
-	}
-	public virtual void afterDelete() {
-		return;
-	}
-	public virtual void afterUndelete() {
-		return;
-	}
-
+	public virtual void beforeInsert() { return; }
+	public virtual void beforeUpdate() { return; }
+	public virtual void beforeDelete() { return; }
+	public virtual void afterInsert() { return; }
+	public virtual void afterUpdate() { return; }
+	public virtual void afterDelete() {	return; }
+	public virtual void afterUndelete() {	return;	}
 }

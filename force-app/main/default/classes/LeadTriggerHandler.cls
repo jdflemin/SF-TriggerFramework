@@ -17,7 +17,7 @@ public class LeadTriggerHandler extends AbstractTrigger{
 	}
 
 	public override void beforeInsert() {
-		if(bypassTrigger) return;
+		if (bypassTrigger) return;
 		// code to call domain and selector layer
 	}
 
