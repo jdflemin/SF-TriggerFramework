@@ -7,17 +7,28 @@
     <members>TriggerDispatcher</members>
   </types>
   <types>
+    <name>CustomMetadata</name>
+    <members>TriggerControl.LeadsController</members>
+  </types>
+  <types>
+    <name>Layout</name>
+    <members>TriggerControl__mdt-Trigger Control Layout</members>
+  </types>
+  <types>
     <name>CustomField</name>
-    <members>TriggerSwitch__c.ObjectAPIName__c</members>
+    <members>TriggerControl__mdt.ObjectAPIName__c</members>
+    <members>TriggerControl__mdt.OverrideCustomSettings__c</members>
+    <members>TriggerControl__mdt.TriggerOff__c</members>
     <members>TriggerSwitch__c.TriggerOff__c</members>
+  </types>
+  <types>
+    <name>CustomObject</name>
+    <members>TriggerControl__mdt</members>
+    <members>TriggerSwitch__c</members>
   </types>
   <types>
     <name>ListView</name>
     <members>TriggerSwitch__c.StandardView</members>
-  </types>
-  <types>
-    <name>CustomObject</name>
-    <members>TriggerSwitch__c</members>
   </types>
   <types>
     <name>ApexTrigger</name>

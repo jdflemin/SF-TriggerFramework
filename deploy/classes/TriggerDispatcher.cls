@@ -6,25 +6,25 @@ public with sharing class TriggerDispatcher {
 	public static void run(AbstractTrigger handler, System.TriggerOperation triggerOperation) {
 		switch on triggerOperation {
 			when BEFORE_INSERT {
-				handler.ableToRun().castingMethod().beforeInsert();
+				handler.isTriggerOnOrOff().castingMethod().beforeInsert();
 			}
 			when BEFORE_UPDATE {
-				handler.beforeUpdate();
+				handler.isTriggerOnOrOff().castingMethod().beforeUpdate();
 			}
 			when BEFORE_DELETE {
-				handler.beforeDelete();
+				handler.isTriggerOnOrOff().castingMethod().beforeDelete();
 			}
 			when AFTER_INSERT {
-				handler.afterInsert();
+				handler.isTriggerOnOrOff().castingMethod().afterInsert();
 			}
 			when AFTER_UPDATE {
-				handler.afterUpdate();
+				handler.isTriggerOnOrOff().castingMethod().afterUpdate();
 			}
 			when AFTER_DELETE {
-				handler.afterDelete();
+				handler.isTriggerOnOrOff().castingMethod().afterDelete();
 			}
 			when AFTER_UNDELETE {
-				handler.afterUndelete();
+				handler.isTriggerOnOrOff().castingMethod().afterUndelete();
 			}
 		}
 	}

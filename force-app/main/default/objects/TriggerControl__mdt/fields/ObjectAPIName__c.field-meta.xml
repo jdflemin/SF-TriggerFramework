@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>ObjectAPIName__c</fullName>
-    <description>Object for which a specific switch is used for</description>
+    <caseSensitive>false</caseSensitive>
+    <description>Object API the metadata controls</description>
     <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
     <label>Object API Name</label>
     <length>40</length>
     <required>true</required>
-    <trackTrending>false</trackTrending>
     <type>Text</type>
-    <unique>false</unique>
+    <unique>true</unique>
 </CustomField>

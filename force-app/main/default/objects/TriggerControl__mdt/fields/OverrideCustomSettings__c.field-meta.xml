@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OverrideCustomSettings__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>If true, then custom metadata will take precedence over any custom settings</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <label>Override Custom Settings</label>
+    <type>Checkbox</type>
+</CustomField>

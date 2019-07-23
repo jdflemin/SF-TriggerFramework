@@ -6,17 +6,6 @@
     <label>TriggerSwitch</label>
     <visibility>Public</visibility>
     <fields>
-        <fullName>ObjectAPIName__c</fullName>
-        <description>Object for which a specific switch is used for</description>
-        <externalId>false</externalId>
-        <label>Object API Name</label>
-        <length>40</length>
-        <required>true</required>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>TriggerOff__c</fullName>
         <defaultValue>false</defaultValue>
         <description>Default is unchecked as triggers are on by default.</description>
