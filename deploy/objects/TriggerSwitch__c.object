@@ -17,8 +17,7 @@
     <listViews>
         <fullName>StandardView</fullName>
         <columns>SETUP_OWNER_NAME</columns>
-        <columns>ObjectAPIName__c</columns>
-        <columns>TriggerOn__c</columns>
+        <columns>TriggerOff__c</columns>
         <columns>SETUP_TYPE</columns>
         <filterScope>Everything</filterScope>
         <label>Standard View</label>
