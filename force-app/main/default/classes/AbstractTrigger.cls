@@ -42,6 +42,7 @@ public abstract class AbstractTrigger {
 		this.setContextVariables(triggerOperation);	
 	}
 	// gets custom settings and custom metadata, sets bypassTrigger variable and returns AbstractTrigger
+	// user value trump profile and profile trumps org defaults
 	public AbstractTrigger isTriggerOnOrOff() {
 		Map<String, TriggerSwitch__c> customSettingsMap = new Map<String, TriggerSwitch__c> {
 			UserInfo.getUserId() => TriggerSwitch__c.getValues(UserInfo.getUserId()),
@@ -55,7 +56,7 @@ public abstract class AbstractTrigger {
 				break;
 			}
 		}
-
+		// metadata can trump all if OverrideCustomSettings__c is true
 		if (triggerControlMetadata.OverrideCustomSettings__c) bypassTrigger = triggerControlMetadata.TriggerOff__c;
 		else bypassTrigger = customSettingsTriggerSwitchOff;
 
@@ -82,7 +83,7 @@ public abstract class AbstractTrigger {
 				this.oldMap = Trigger.oldMap;
 			}
 			when else {
-				System.debug('Error');
+				throw new AbstractTriggerException('Could not determine trigger operation. Please try again.');
 			}
 		}
 	}
@@ -97,4 +98,6 @@ public abstract class AbstractTrigger {
 	public virtual void afterUpdate() { return; }
 	public virtual void afterDelete() {	return; }
 	public virtual void afterUndelete() {	return;	}
+
+	class AbstractTriggerException extends Exceptions() {}
 }
