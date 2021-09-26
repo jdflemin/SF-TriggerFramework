@@ -3,7 +3,8 @@
  */
 
 public with sharing class TriggerDispatcher {
-	public static void run(AbstractTrigger handler, System.TriggerOperation triggerOperation) {
+	public static void run(AbstractTrigger handler) {
+        System.TriggerOperation triggerOperation = handler.triggerOperation;
 		switch on triggerOperation {
 			when BEFORE_INSERT {
 				handler.beforeInsert();
