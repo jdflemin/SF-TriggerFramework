@@ -2,17 +2,23 @@
  * Created by Justin Fleming on 5/4/2019.
  */
 
+/**
+ * Created by Justin Fleming on 5/4/2019.
+ */
+
 public abstract class AbstractTrigger {
 
 	public List<SObject> triggerNew;
 	public List<SObject> triggerOld;
 	public Map<Id, SObject> newMap;
 	public Map<Id, SObject> oldMap;
+    	public System.TriggerOperation triggerOperation;
 	public Schema.SObjectType sObjectType {
 		get { return trigger.new.isEmpty() ? trigger.old[0].getSObjectType() : trigger.new[0].getSObjectType(); } 
 	}
 	
 	public AbstractTrigger(System.TriggerOperation triggerOperation) {
+        this.triggerOperation = triggerOperation;
 		this.setContextVariables(triggerOperation);	
 		castingMethod();
 	}
